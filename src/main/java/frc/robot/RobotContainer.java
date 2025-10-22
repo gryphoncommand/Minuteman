@@ -31,7 +31,7 @@ public class RobotContainer {
   // TODO: implement an intake command that manages intake extender and rollers
   // TODO: create command compositions that allow for easy control of subsystems
   // TODO: make the state machine in this file smoother and more robust
-  // TODO: (Extra Challenging) Implement command to pathfind to nearest shootable position and score
+  // TODO: (Extra Challenging) Implement command to pathfind to nearest shootable position and drive + score
   // TODO: (Extra EXTRA Challenging) Implement command to identify game pieces on the field and pick them up from a given camera
   // TODO: make sure to document all of this when it's done in commit messages & comments :3
   // I would make a branch as you work on these
