@@ -8,6 +8,8 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants.SpindexerConstants;
 
+
+// TODO: make this a spark flex because carson hates me :(
 public class Passthrough extends SubsystemBase {
     private final TalonFX passthroughMotor = new TalonFX(SpindexerConstants.kPassthroughMotorID);
     private final DutyCycleOut openLoopRequest = new DutyCycleOut(0);
