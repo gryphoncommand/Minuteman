@@ -27,10 +27,10 @@ import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
 
 public class RobotContainer {
-  // TODO: implement a scoring command that manages spindexer, shooter, and passthrough
-  // TODO: implement an intake command that manages intake extender and rollers
+  // TODO: implement a shooting command that manages spindexer, shooter, and passthrough
+  // TODO: implement an intake command that manages intake extender and rollers, and an un-intake command to retract
   // TODO: create command compositions that allow for easy control of subsystems
-  // TODO: make the state machine in this file smoother and more robust
+  // TODO: make the state machine in this file smoother and more robust, and potentially try to use stall torque detection to identify jams?
   // TODO: (Extra Challenging) Implement command to pathfind to nearest shootable position and drive + score
   // TODO: (Extra EXTRA Challenging) Implement command to identify game pieces on the field and pick them up from a given camera
   // TODO: make sure to document all of this when it's done in commit messages & comments :3
