@@ -37,6 +37,7 @@ public class RobotContainer {
   // I would make a branch as you work on these
 
   // Subsystems
+  // TODO: implement the rest of the subsystems
   private final DriveSubsystem m_drive = new DriveSubsystem();
   private final ShooterIO m_shooter = Robot.isReal() ? new ShooterTalonFX() : new ShooterSim();
   // TODO: Implement this at all lmao
