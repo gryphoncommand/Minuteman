@@ -27,6 +27,14 @@ import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
 
 public class RobotContainer {
+  // TODO: implement a scoring command that manages spindexer, shooter, and passthrough
+  // TODO: implement an intake command that manages intake extender and rollers
+  // TODO: create command compositions that allow for easy control of subsystems
+  // TODO: make the state machine in this file smoother and more robust
+  // TODO: (Extra Challenging) Implement command to pathfind to nearest shootable position and score
+  // TODO: (Extra EXTRA Challenging) Implement command to identify game pieces on the field and pick them up from a given camera
+  // TODO: make sure to document all of this when it's done in commit messages & comments :3
+  // I would make a branch as you work on these
 
   // Subsystems
   private final DriveSubsystem m_drive = new DriveSubsystem();
@@ -78,7 +86,7 @@ public class RobotContainer {
       new RunCommand(()->{
         if (currentState == State.ReadyForShoot || currentState == State.Shooting){
           currentState = State.Shooting;
-          // TODO: feed passthrough to spun-up shooter
+          // TODO: feed passthrough/spindexer to spun-up shooter
         }
       })
     );
@@ -111,7 +119,7 @@ public class RobotContainer {
                     .get().toPose2d().getTranslation())
                 < AlignmentConstants.SPIN_DIST);
 
-    // TODO: Replace with real sensor for piece detection, preferably a beam break in the intake or shooter files
+    // TODO: Replace with real sensor for piece detection, preferably a beam break in the intake or spindexer files
     Trigger hasPiece = new Trigger(() -> true);
 
     hasPiece.onFalse(new InstantCommand(()->currentState = State.NoPiece)).onTrue(new InstantCommand(()->currentState = State.StowedPiece));
