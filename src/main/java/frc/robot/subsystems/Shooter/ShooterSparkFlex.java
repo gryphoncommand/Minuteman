@@ -22,7 +22,6 @@ public class ShooterSparkFlex extends SubsystemBase implements ShooterIO {
     private ControlType currentControlType = ControlType.kDutyCycle;
 
     public ShooterSparkFlex() {
-        // Apply configuration from your Configs file, similar to Wrist
         shooterMotor.configure(Configs.Shooter.ShooterConfig, ResetMode.kNoResetSafeParameters, PersistMode.kNoPersistParameters);
 
         pid = shooterMotor.getClosedLoopController();

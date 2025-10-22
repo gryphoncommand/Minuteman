@@ -37,6 +37,7 @@ public class AlignToGoal extends Command {
     @Override
     public void execute() {
         // Driver translation inputs
+        // TODO: limit translation speed when close to rotation aligned
         double forward = -MathUtil.applyDeadband(controller.getLeftY(), OIConstants.kDriveDeadband);
         double strafe  = -MathUtil.applyDeadband(controller.getLeftX(), OIConstants.kDriveDeadband);
 

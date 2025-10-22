@@ -14,6 +14,7 @@ import frc.robot.Configs;
 import frc.robot.Constants.SpindexerConstants;
 
 public class Spindexer extends SubsystemBase {
+    // TODO: Add counter for number of pieces in spindexer
     private final SparkFlex spindexerMotor = new SparkFlex(SpindexerConstants.kSpindexerMotorID, MotorType.kBrushless);
     private final RelativeEncoder encoder = spindexerMotor.getEncoder();
     private final SparkClosedLoopController pid;

@@ -23,6 +23,9 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants.IntakeConstants;
 
 
+
+// This code is heavily based on the WPILib SingleJointedArmSim example, as well as the ArmSim example from the KrakenX60 motor documentation
+// It also takes heavy inspiration from team 1114's TalonFX simulation code
 public class IntakeExtenderSim extends SubsystemBase implements IntakeExtenderIO {
     private enum ControlMode { DutyCycle, Velocity, Position, Voltage }
 

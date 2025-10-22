@@ -13,6 +13,9 @@ import frc.robot.Constants.OIConstants;
 import frc.robot.Constants.VisionConstants;
 import frc.robot.commands.AlignToGoal;
 import frc.robot.subsystems.DriveSubsystem;
+import frc.robot.subsystems.IntakeExtender.IntakeExtender;
+import frc.robot.subsystems.IntakeExtender.IntakeExtenderIO;
+import frc.robot.subsystems.IntakeExtender.IntakeExtenderSim;
 import frc.robot.subsystems.Shooter.ShooterIO;
 import frc.robot.subsystems.Shooter.ShooterSim;
 import frc.robot.subsystems.Shooter.ShooterTalonFX;
@@ -28,7 +31,8 @@ public class RobotContainer {
   // Subsystems
   private final DriveSubsystem m_drive = new DriveSubsystem();
   private final ShooterIO m_shooter = Robot.isReal() ? new ShooterTalonFX() : new ShooterSim();
-  // private final IntakeSubsystem m_intake = new IntakeSubsystem();
+  // TODO: Implement this at all lmao
+  private final IntakeExtenderIO m_intakeDeploy = Robot.isReal() ? new IntakeExtender() : new IntakeExtenderSim();
 
   // Controllers
   private final CommandXboxController m_driverController =
@@ -74,8 +78,7 @@ public class RobotContainer {
       new RunCommand(()->{
         if (currentState == State.ReadyForShoot || currentState == State.Shooting){
           currentState = State.Shooting;
-          // TODO: feed passthrough/intake to spun-up shooter
-          currentState = State.StowedPiece;
+          // TODO: feed passthrough to spun-up shooter
         }
       })
     );
@@ -108,7 +111,7 @@ public class RobotContainer {
                     .get().toPose2d().getTranslation())
                 < AlignmentConstants.SPIN_DIST);
 
-    // TODO: Replace with real sensor for piece detection
+    // TODO: Replace with real sensor for piece detection, preferably a beam break in the intake or shooter files
     Trigger hasPiece = new Trigger(() -> true);
 
     hasPiece.onFalse(new InstantCommand(()->currentState = State.NoPiece)).onTrue(new InstantCommand(()->currentState = State.StowedPiece));
