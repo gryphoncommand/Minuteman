@@ -33,6 +33,7 @@ public class RobotContainer {
   // TODO: make the state machine in this file smoother and more robust, and potentially try to use stall torque detection to identify jams?
   // TODO: (Extra Challenging) Implement command to pathfind to nearest shootable position and drive + score
   // TODO: (Extra EXTRA Challenging) Implement command to identify game pieces on the field and pick them up from a given camera
+  // TODO: Implement rollers that pass up to shooter
   // TODO: make sure to document all of this when it's done in commit messages & comments :3
   // I would make a branch as you work on these
 
