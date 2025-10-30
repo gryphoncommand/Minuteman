@@ -5,6 +5,7 @@ import com.revrobotics.spark.config.ClosedLoopConfig.FeedbackSensor;
 import com.revrobotics.spark.config.SparkBaseConfig.IdleMode;
 import com.revrobotics.spark.config.SparkFlexConfig;
 
+import frc.robot.Constants.IntakeConstants;
 import frc.robot.Constants.ModuleConstants;
 
 public final class Configs {
@@ -88,8 +89,8 @@ public final class Configs {
                                 .openLoopRampRate(0)
                                 .closedLoopRampRate(0);
                         IntakeDeployConfig.encoder
-                                .positionConversionFactor(1)
-                                .velocityConversionFactor(1);
+                                .positionConversionFactor(IntakeConstants.kGearRatio)
+                                .velocityConversionFactor(IntakeConstants.kGearRatio);
                         IntakeDeployConfig.closedLoop
                                 .feedbackSensor(FeedbackSensor.kPrimaryEncoder)
                                 // These are example gains you may need to them for your own robot!
